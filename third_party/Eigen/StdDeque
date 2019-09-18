@@ -1,0 +1,17 @@
+#ifndef EIGEN_STDDEQUE_MODULE_H
+#define EIGEN_STDDEQUE_MODULE_H
+
+#include "Core"
+#include <deque>
+
+#if (defined(_MSC_VER) && defined(_WIN64)) /* MSVC auto aligns in 64 bit builds */
+
+#define EIGEN_DEFINE_STL_DEQUE_SPECIALIZATION(...)
+
+#else
+
+#include "src/StlSupport/StdDeque.h"
+
+#endif
+
+#endif // EIGEN_STDDEQUE_MODULE_H
